@@ -1,0 +1,224 @@
+/*
+ * MindSparkd — the app's identity, on the web.
+ *
+ * The palette is lifted from `src/lib/theme.ts` in the mobile app: parchment
+ * and cognac in light, charcoal and brass in dark. Newsreader and Archivo are
+ * the identity's real faces -- the app falls back to system fonts because they
+ * are not registered there yet, but the web can load them properly.
+ */
+
+:root {
+  --bg: #EFE2CC;
+  --surface: #F8EFE0;
+  --border: #E2D0B4;
+  --text: #2B1A10;
+  --muted: #6A4A33;
+  --faint: #8A6A50;
+  --accent: #95522A;
+  --accent-soft: rgba(149, 82, 42, 0.1);
+  --brass: #C08A2E;
+
+  --serif: 'Newsreader', Georgia, 'Times New Roman', serif;
+  --sans: 'Archivo', -apple-system, 'Segoe UI', sans-serif;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) {
+    --bg: #16181B;
+    --surface: #1E2125;
+    --border: rgba(236, 230, 218, 0.14);
+    --text: #F4EEE3;
+    --muted: #BCB3A6;
+    --faint: #9A9186;
+    --accent: #C4763F;
+    --accent-soft: rgba(196, 118, 63, 0.14);
+    --brass: #D8A24B;
+  }
+}
+
+:root[data-theme='dark'] {
+  --bg: #16181B;
+  --surface: #1E2125;
+  --border: rgba(236, 230, 218, 0.14);
+  --text: #F4EEE3;
+  --muted: #BCB3A6;
+  --faint: #9A9186;
+  --accent: #C4763F;
+  --accent-soft: rgba(196, 118, 63, 0.14);
+  --brass: #D8A24B;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--sans);
+  font-size: 17px;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+
+.wrap {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 0 16px 96px;
+}
+
+/* Header ------------------------------------------------------------ */
+
+header.site {
+  padding: 28px 0 8px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+header.site a.brand {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  text-decoration: none;
+  color: var(--text);
+}
+
+header.site .mark {
+  width: 15px;
+  height: 15px;
+  color: var(--brass);
+  flex-shrink: 0;
+}
+
+header.site .name {
+  font-family: var(--serif);
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+/* Type -------------------------------------------------------------- */
+
+h1 {
+  font-family: var(--serif);
+  font-size: clamp(30px, 7vw, 42px);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+  margin: 28px 0 6px;
+}
+
+h2 {
+  font-family: var(--serif);
+  font-size: 23px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  margin: 40px 0 10px;
+}
+
+h3 {
+  font-family: var(--sans);
+  font-size: 16px;
+  font-weight: 600;
+  margin: 26px 0 6px;
+}
+
+p, li { color: var(--muted); }
+li { margin-bottom: 7px; }
+ul { padding-left: 22px; }
+
+strong { color: var(--text); font-weight: 600; }
+
+a { color: var(--accent); text-underline-offset: 2px; }
+a:hover { color: var(--text); }
+
+.lede {
+  font-size: 19px;
+  color: var(--muted);
+  margin-top: 0;
+}
+
+.updated {
+  font-size: 13px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--faint);
+  margin: 0 0 30px;
+}
+
+/* Cards ------------------------------------------------------------- */
+
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 22px 24px;
+  margin: 22px 0;
+}
+
+.card h2, .card h3 { margin-top: 0; }
+.card > :last-child { margin-bottom: 0; }
+
+.note {
+  border-left: 3px solid var(--accent);
+  background: var(--accent-soft);
+  border-radius: 0 10px 10px 0;
+  padding: 14px 18px;
+  margin: 22px 0;
+}
+
+.note > :last-child { margin-bottom: 0; }
+.note p { color: var(--text); }
+
+/* Steps ------------------------------------------------------------- */
+
+ol.steps {
+  counter-reset: step;
+  list-style: none;
+  padding: 0;
+  margin: 18px 0 0;
+}
+
+ol.steps li {
+  counter-increment: step;
+  position: relative;
+  padding-left: 42px;
+  margin-bottom: 16px;
+  color: var(--muted);
+}
+
+ol.steps li::before {
+  content: counter(step);
+  position: absolute;
+  left: 0;
+  top: 1px;
+  width: 27px;
+  height: 27px;
+  border-radius: 999px;
+  background: var(--accent);
+  color: #FBF3E6;
+  font-size: 14px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Footer ------------------------------------------------------------ */
+
+footer.site {
+  border-top: 1px solid var(--border);
+  margin-top: 64px;
+  padding-top: 22px;
+  font-size: 15px;
+  color: var(--faint);
+}
+
+footer.site nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 20px;
+  margin-bottom: 14px;
+}
+
+footer.site p { font-size: 14px; color: var(--faint); margin: 0; }

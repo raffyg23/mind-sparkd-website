@@ -1,9 +1,9 @@
 /*
  * The landing page, on top of style.css.
  *
- * Merged from the three directions on the website canvas (2026-09-27):
- * A's leather hero, feature list, genre chips and privacy card; C's quote
- * wall; B's night strip of backgrounds.
+ * Merged from the three directions on the website canvas (2026-09-27, second
+ * pass): B's night hero; C's quote wall and feature grid; B's strip of
+ * backgrounds; A's genre chips and privacy card.
  */
 
 :root {
@@ -237,95 +237,137 @@
 .screen .nav span.on { background: rgba(251, 243, 230, 0.16); color: var(--cream); }
 .screen .nav .i { width: 1.8em; height: 1.8em; }
 
-/* Hero ------------------------------------------------------------- */
+/* Hero: the night sky ---------------------------------------------- *
+ *
+ * A photo, so it is dark in both modes. On this page the header is laid over
+ * it rather than above it, so it gets light colours of its own.
+ */
 
-.hero .bar {
+.site-header.over-hero {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 3;
+}
+
+.over-hero .brand { color: var(--cream); }
+.over-hero .site-nav a { color: rgba(244, 238, 227, 0.75); }
+.over-hero .site-nav a:hover { color: var(--cream); }
+.over-hero .site-nav a.pill { background: var(--cream); color: #16181B; }
+.over-hero :focus-visible { outline-color: var(--gold); }
+
+.hero {
+  position: relative;
+  overflow: hidden;
+  background: #0E0F11;
+  color: var(--cream);
+}
+
+.hero > .sky {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 40%;
+  z-index: 0;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: rgba(14, 15, 17, 0.55);
+}
+
+.hero > .bar { position: relative; z-index: 2; }
+
+.hero :focus-visible { outline-color: var(--gold); }
+
+.hero-body {
   display: grid;
   grid-template-columns: minmax(0, 1fr) auto;
   align-items: center;
-  gap: 40px;
-  padding-top: 40px;
-  padding-bottom: 96px;
+  gap: 80px;
+  padding-top: 132px;
+  padding-bottom: 112px;
+}
+
+.badge {
+  display: inline-flex;
+  margin: 0;
+  padding: 7px 14px;
+  border-radius: 999px;
+  border: 1px solid rgba(251, 243, 230, 0.3);
+  background: rgba(251, 243, 230, 0.1);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
 }
 
 .hero h1 {
-  margin: 18px 0 0;
+  margin: 26px 0 0;
   font-family: var(--serif);
-  font-size: clamp(48px, 6.2vw, 78px);
-  line-height: 1.02;
+  font-size: clamp(50px, 6.6vw, 84px);
+  line-height: 1;
   font-weight: 500;
-  letter-spacing: -0.025em;
+  letter-spacing: -0.03em;
 }
 
-.hero h1 em { color: var(--accent); }
+.hero h1 em { color: var(--gold); }
 
 .hero .lede {
-  max-width: 480px;
-  margin: 26px 0 0;
+  max-width: 500px;
+  margin: 28px 0 0;
   font-size: 20px;
   line-height: 1.6;
+  color: rgba(251, 243, 230, 0.82);
 }
 
-.cta-row {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 14px 20px;
-  margin-top: 36px;
-  scroll-margin-top: 24px;
-}
+.hero .store { margin-top: 38px; background: var(--cream); color: #16181B; scroll-margin-top: 24px; }
 
-.cta-row .aside { font-size: 15px; color: var(--faint); }
+.hero .phone { --pw: 320px; }
 
-.stats {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px 36px;
-  margin: 56px 0 0;
-  padding: 0;
-  list-style: none;
-}
-
-.stats b {
-  display: block;
-  font-family: var(--serif);
-  font-size: 36px;
-  font-weight: 600;
-  line-height: 1.2;
-}
-
-.stats span { font-size: 14px; color: var(--faint); }
-
-.fan {
-  position: relative;
-  width: min(560px, 44vw);
-  aspect-ratio: 560 / 640;
-  container-type: inline-size;
-}
-
-.fan .phone { position: absolute; }
-.fan .left { --pw: 44.6cqw; left: 0; top: 11%; transform: rotate(-7deg); }
-.fan .right { --pw: 44.6cqw; right: 0; top: 11%; transform: rotate(7deg); }
-.fan .center { --pw: 51.8cqw; left: 24.1%; top: 0; z-index: 1; }
-
-@media (max-width: 980px) {
-  .hero .bar { grid-template-columns: minmax(0, 1fr); gap: 56px; padding-bottom: 72px; }
-  .fan { width: min(520px, 100%); margin: 0 auto; }
+@media (max-width: 900px) {
+  .hero-body { grid-template-columns: minmax(0, 1fr); gap: 56px; padding-top: 112px; padding-bottom: 80px; }
+  .hero .phone { --pw: min(290px, 74vw); margin: 0 auto; }
 }
 
 /* Quote wall ------------------------------------------------------- */
 
-.wall-head {
-  text-align: center;
-  padding-top: 24px;
+.wall-section { padding-top: 96px; }
+
+.wall-head { text-align: center; }
+
+.wall-head h2 {
+  margin: 0;
+  font-family: var(--serif);
+  font-size: clamp(42px, 5.6vw, 72px);
+  line-height: 1.04;
+  font-weight: 500;
+  letter-spacing: -0.03em;
 }
 
-.wall-head p:not(.eyebrow) {
-  max-width: 600px;
-  margin: 18px auto 0;
-  font-size: 18px;
+.wall-head h2 em { color: var(--accent); }
+
+.wall-head p {
+  max-width: 620px;
+  margin: 24px auto 0;
+  font-size: 19px;
+  line-height: 1.6;
   color: var(--muted);
 }
+
+.wall-head .see-all {
+  display: inline-block;
+  margin-top: 20px;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+@media (max-width: 720px) { .wall-section { padding-top: 72px; } }
 
 .wall {
   position: relative;
@@ -399,43 +441,44 @@
 @media (max-width: 760px) { .cols { column-count: 2; column-gap: 12px; } .qcard { margin-bottom: 12px; padding: 20px 18px 18px; } }
 @media (max-width: 480px) { .cols { column-count: 1; } .wall { max-height: 720px; } }
 
-/* Features --------------------------------------------------------- */
-
-.features {
-  background: var(--surface);
-  border-top: 1px solid var(--border);
-  border-bottom: 1px solid var(--border);
-  scroll-margin-top: 0;
-}
+/* Features: C's grid beside two phones ----------------------------- */
 
 .features .bar {
   display: grid;
-  grid-template-columns: auto minmax(0, 1fr);
+  grid-template-columns: minmax(0, 1fr) auto;
   align-items: center;
-  gap: 96px;
-  padding-top: 96px;
-  padding-bottom: 96px;
+  gap: 80px;
+  padding-top: 40px;
+  padding-bottom: 104px;
+  scroll-margin-top: 16px;
 }
 
-.features .phone { --pw: 300px; }
+.features h2 {
+  margin: 0;
+  font-family: var(--serif);
+  font-size: clamp(38px, 4.4vw, 54px);
+  line-height: 1.06;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+}
 
-.feat-list {
-  display: flex;
-  flex-direction: column;
-  gap: 30px;
-  margin: 36px 0 0;
+.feat-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 30px 36px;
+  margin: 40px 0 0;
   padding: 0;
   list-style: none;
 }
 
-.feat-list li { display: flex; gap: 18px; align-items: flex-start; }
+.feat-grid li { display: flex; gap: 18px; align-items: flex-start; }
 
-.feat-list .ico {
+.feat-grid .ico {
   width: 48px;
   height: 48px;
   flex-shrink: 0;
   border-radius: 14px;
-  background: var(--bg);
+  background: var(--surface);
   border: 1px solid var(--border);
   display: flex;
   align-items: center;
@@ -443,7 +486,7 @@
   color: var(--accent);
 }
 
-.feat-list h3 {
+.feat-grid h3 {
   margin: 0;
   font-family: var(--serif);
   font-size: 24px;
@@ -451,12 +494,20 @@
   line-height: 1.3;
 }
 
-.feat-list p { margin: 6px 0 0; font-size: 16.5px; line-height: 1.6; color: var(--muted); }
+.feat-grid p { margin: 6px 0 0; font-size: 16.5px; line-height: 1.6; color: var(--muted); }
 
-@media (max-width: 900px) {
-  .features .bar { grid-template-columns: minmax(0, 1fr); gap: 56px; padding-top: 72px; padding-bottom: 72px; }
-  .features .phone { --pw: min(280px, 72vw); margin: 0 auto; order: 2; }
+.pair { display: flex; align-items: center; gap: 22px; }
+.pair .phone:first-child { --pw: 260px; }
+.pair .phone:last-child { --pw: 230px; }
+
+@media (max-width: 1080px) {
+  .features .bar { grid-template-columns: minmax(0, 1fr); gap: 56px; padding-bottom: 80px; }
+  .pair { justify-content: center; }
+  .pair .phone:first-child { --pw: min(260px, 46vw); }
+  .pair .phone:last-child { --pw: min(230px, 40vw); }
 }
+
+@media (max-width: 560px) { .feat-grid { grid-template-columns: minmax(0, 1fr); gap: 26px; } }
 
 /* The night strip -------------------------------------------------- */
 
@@ -467,10 +518,9 @@
   text-align: center;
 }
 
-.ink .display { color: var(--ink-text); }
-.ink .eyebrow { color: var(--gold); }
+.ink .display { margin: 0; color: var(--ink-text); }
 
-.ink .bar > p:not(.eyebrow) {
+.ink .bar > p {
   max-width: 560px;
   margin: 16px auto 0;
   font-size: 18px;

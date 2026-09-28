@@ -19,8 +19,9 @@ HTML — no build step, no framework, nothing to install.
 | `assets/bg/` | Background photos from the app's own catalogue (Pexels), resized for the web |
 
 The landing page merges the three directions on the website canvas
-(2026-09-27): the leather hero, feature list, genre chips and privacy card
-from A; the quote wall from C; the night strip of backgrounds from B.
+(2026-09-27): the night-sky hero and the strip of backgrounds from B; the
+quote wall and feature grid from C; the genre chips and privacy card from A.
+The quote wall's headline, "Less fridge magnet. More *that's so me.*", is new.
 
 The phones are drawn in CSS, not screenshots. Every size inside one is in `em`
 and the frame's font-size is its width divided by 29, so setting `--pw` alone
@@ -66,7 +67,7 @@ Claims that depend on code or services elsewhere:
 - **"Deleting your account deletes your uploaded photos."** True as long as
   `delete_auth_user` in the API sweeps the `backgrounds` and `avatars` storage
   buckets. Database rows cascade on their own; storage objects do not.
-- **"29 genres", "60+ backgrounds", "mostly originals"** (landing page). Update
+- **"29 genres", "60+ backgrounds", "thousands of quotes"** (landing page). Update
   them when the library or the background catalogue changes.
 - **"Coming soon to the App Store".** When the app is live, make the badge a
   link to `https://apps.apple.com/app/id6801309940` (there is a comment on it).

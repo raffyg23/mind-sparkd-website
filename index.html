@@ -33,11 +33,12 @@
   <symbol id="i-bell" viewBox="0 0 24 24"><path d="M6 16v-5a6 6 0 0 1 12 0v5l2 2H4l2-2z"/><path d="M10 21h4"/></symbol>
   <symbol id="i-sliders" viewBox="0 0 24 24"><path d="M4 7h10"/><path d="M18 7h2"/><path d="M4 17h4"/><path d="M12 17h8"/><circle cx="16" cy="7" r="2"/><circle cx="10" cy="17" r="2"/></symbol>
   <symbol id="i-flame" viewBox="0 0 24 24"><path d="M12 3c1 3.5 5 5.5 5 10a5 5 0 0 1-10 0c0-2.5 1.5-4 2.5-5 0 2 1 3 2 3 0-3-1-5.5.5-8z"/></symbol>
+  <symbol id="i-image" viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="3"/><circle cx="9" cy="9" r="1.6"/><path d="M20 15l-5-5-9 9"/></symbol>
   <symbol id="i-lock" viewBox="0 0 24 24"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></symbol>
   <symbol id="i-apple" viewBox="0 0 24 24"><path d="M16 3c-1.2.1-2.6.9-3.3 2-.7.9-1.2 2.2-1 3.4 1.3 0 2.6-.8 3.3-1.8.7-1 1.1-2.3 1-3.6z"/><path d="M12 9c-1 0-2-.7-3.2-.7C6.8 8.3 5 10 5 13.2 5 17 7.6 21 9.4 21c.9 0 1.5-.6 2.6-.6s1.6.6 2.6.6c1.9 0 4-3.5 4.4-5.2-2-.8-2.8-2.6-2.8-4.3 0-1.6.9-2.8 2-3.4-.8-1.1-2.1-1.8-3.2-1.8-1.3 0-2.1.7-3 .7z"/></symbol>
 </svg>
 
-<header class="site-header">
+<header class="site-header over-hero">
   <div class="bar">
     <a class="brand" href="index.html">
       <img src="assets/icon.png" alt="" width="40" height="40">
@@ -54,54 +55,25 @@
 
 <main>
 
-<section class="hero">
-  <div class="bar">
+<section class="hero" aria-labelledby="hero-title">
+  <img class="sky" src="assets/bg/night-sky-wide.jpg" alt="">
+  <div class="bar hero-body">
     <div>
-      <p class="eyebrow">A daily quote app with a journal</p>
-      <h1>Daily quotes<br>worth <em>keeping.</em></h1>
-      <p class="lede">Swipe through quotes that sound like a friend, not a poster.
-      Save the ones that land, write back to them, and have them come back on
-      the day you need them.</p>
-      <div class="cta-row" id="download">
-        <!-- When the app is live, make this an <a> to https://apps.apple.com/app/id6801309940 -->
-        <span class="store"><svg class="i"><use href="#i-apple"/></svg>Coming soon to the App Store</span>
-        <span class="aside">For iPhone</span>
-      </div>
-      <ul class="stats">
-        <li><b>1,000s</b><span>quotes, mostly originals</span></li>
-        <li><b>29</b><span>genres, gym to Gen Z</span></li>
-        <li><b>60+</b><span>backgrounds, or your own</span></li>
-      </ul>
+      <p class="badge">Daily quotes · Journal · Reminders</p>
+      <h1 id="hero-title">One good line<br>can change<br><em>the whole day.</em></h1>
+      <p class="lede">MindSparkd is a daily quote app you swipe like a feed, and a
+      journal that keeps the ones that stay with you.</p>
+      <!-- When the app is live, make this an <a> to https://apps.apple.com/app/id6801309940 -->
+      <span class="store" id="download"><svg class="i"><use href="#i-apple"/></svg>Coming soon to the App Store</span>
     </div>
-
-    <div class="fan">
-      <div class="phone left" role="img" aria-label="A Worry and Stress quote over misty pines: Lower the bar for a day. You'll still clear it.">
-        <div class="screen">
-          <img src="assets/bg/misty-pines.jpg" alt="">
-          <span class="cat">Worry &amp; Stress</span>
-          <div class="body"><p class="q">Lower the bar for a day. You'll still clear it.</p></div>
-          <div class="rail"><span><svg class="i"><use href="#i-heart"/></svg></span><span><svg class="i"><use href="#i-pen"/></svg></span><span><svg class="i"><use href="#i-share"/></svg></span></div>
-          <div class="nav"><span class="on"><svg class="i"><use href="#i-home"/></svg></span><span><svg class="i"><use href="#i-journal"/></svg></span><span><svg class="i"><use href="#i-bell"/></svg></span><span><svg class="i"><use href="#i-sliders"/></svg></span></div>
-        </div>
-      </div>
-      <div class="phone right" role="img" aria-label="A Gen Z quote over a violet dusk sky: Be the green flag you want to see.">
-        <div class="screen">
-          <img src="assets/bg/violet-dusk.jpg" alt="">
-          <span class="cat">Gen Z</span>
-          <div class="body"><p class="q">Be the green flag you want to see.</p></div>
-          <div class="rail"><span><svg class="i"><use href="#i-heart"/></svg></span><span><svg class="i"><use href="#i-pen"/></svg></span><span><svg class="i"><use href="#i-share"/></svg></span></div>
-          <div class="nav"><span class="on"><svg class="i"><use href="#i-home"/></svg></span><span><svg class="i"><use href="#i-journal"/></svg></span><span><svg class="i"><use href="#i-bell"/></svg></span><span><svg class="i"><use href="#i-sliders"/></svg></span></div>
-        </div>
-      </div>
-      <div class="phone center" role="img" aria-label="The MindSparkd feed: a liked Motivation quote over the Milky Way, Keep your eyes on the stars, and your feet on the ground, by Theodore Roosevelt, with a 5 day streak.">
-        <div class="screen">
-          <img src="assets/bg/milky-way.jpg" alt="">
-          <span class="cat">Motivation</span>
-          <span class="toast"><svg class="i"><use href="#i-flame"/></svg>5 day streak · Still going</span>
-          <div class="body"><p class="q">Keep your eyes on the stars, and your feet on the ground.</p><p class="by">Theodore Roosevelt</p></div>
-          <div class="rail"><span class="liked"><svg class="i"><use href="#i-heart"/></svg></span><span><svg class="i"><use href="#i-pen"/></svg></span><span><svg class="i"><use href="#i-share"/></svg></span></div>
-          <div class="nav"><span class="on"><svg class="i"><use href="#i-home"/></svg></span><span><svg class="i"><use href="#i-journal"/></svg></span><span><svg class="i"><use href="#i-bell"/></svg></span><span><svg class="i"><use href="#i-sliders"/></svg></span></div>
-        </div>
+    <div class="phone" role="img" aria-label="The MindSparkd feed: a liked Gratitude quote over the Milky Way, Somewhere, someone is thankful they met you, with a 12 day streak.">
+      <div class="screen">
+        <img src="assets/bg/milky-way.jpg" alt="">
+        <span class="cat">Gratitude</span>
+        <span class="toast"><svg class="i"><use href="#i-flame"/></svg>12 day streak · Still going</span>
+        <div class="body"><p class="q">Somewhere, someone is thankful they met you.</p></div>
+        <div class="rail"><span class="liked"><svg class="i"><use href="#i-heart"/></svg></span><span><svg class="i"><use href="#i-pen"/></svg></span><span><svg class="i"><use href="#i-share"/></svg></span></div>
+        <div class="nav"><span class="on"><svg class="i"><use href="#i-home"/></svg></span><span><svg class="i"><use href="#i-journal"/></svg></span><span><svg class="i"><use href="#i-bell"/></svg></span><span><svg class="i"><use href="#i-sliders"/></svg></span></div>
       </div>
     </div>
   </div>
@@ -110,10 +82,10 @@
 <section class="wall-section" aria-labelledby="wall-title">
   <div class="bar">
     <div class="wall-head">
-      <p class="eyebrow">From the library</p>
-      <h2 class="display" id="wall-title">Quotes that don't sound<br class="lg"> like <em>a poster.</em></h2>
-      <p>Most are originals, written to sound like a friend who gets it. Real
-      quotes only when the source is certain.</p>
+      <h2 id="wall-title">Less fridge magnet.<br class="lg"> More <em>that's so me.</em></h2>
+      <p>Thousands of quotes across 29 genres, from the gym to gratitude to the
+      2am overthinking. Swipe, save, write back, and get reminded.</p>
+      <a class="see-all" href="#genres">See all 29 genres</a>
     </div>
     <div class="wall">
       <div class="cols">
@@ -134,36 +106,48 @@
   </div>
 </section>
 
-<section class="features" id="features" aria-labelledby="features-title">
-  <div class="bar">
-    <div class="phone" role="img" aria-label="A Motivation quote over a late-night cafe: Write the goal down. Things get real once they have ink.">
-      <div class="screen">
-        <img src="assets/bg/late-cafe.jpg" alt="" loading="lazy">
-        <span class="cat">Motivation</span>
-        <div class="body"><p class="q">Write the goal down. Things get real once they have ink.</p></div>
-        <div class="rail"><span><svg class="i"><use href="#i-heart"/></svg></span><span><svg class="i"><use href="#i-pen"/></svg></span><span><svg class="i"><use href="#i-share"/></svg></span></div>
-        <div class="nav"><span class="on"><svg class="i"><use href="#i-home"/></svg></span><span><svg class="i"><use href="#i-journal"/></svg></span><span><svg class="i"><use href="#i-bell"/></svg></span><span><svg class="i"><use href="#i-sliders"/></svg></span></div>
-      </div>
-    </div>
+<section class="features" aria-labelledby="features-title">
+  <div class="bar" id="features">
     <div>
-      <h2 class="display" id="features-title">Read it. Sit with it.<br>Write back.</h2>
-      <ul class="feat-list">
-        <li><span class="ico"><svg class="i"><use href="#i-heart"/></svg></span><div><h3>Like the ones that land</h3><p>One quote at a time, full screen, over a background you pick. Swipe up for the next.</p></div></li>
-        <li><span class="ico"><svg class="i"><use href="#i-pen"/></svg></span><div><h3>Reflect on a ruled page</h3><p>Tap the pen and write what the line meant to you. It stays with the quote in your journal, sorted by month.</p></div></li>
-        <li><span class="ico"><svg class="i"><use href="#i-bell"/></svg></span><div><h3>Bring it back when you need it</h3><p>Set a saved quote to return once, daily, or on your own schedule, right on your lock screen.</p></div></li>
-        <li><span class="ico"><svg class="i"><use href="#i-share"/></svg></span><div><h3>Share it as an image</h3><p>Send a quote, with your background and your reflection, as a picture made for stories.</p></div></li>
-        <li><span class="ico"><svg class="i"><use href="#i-flame"/></svg></span><div><h3>Keep your streak</h3><p>A like or a reflection a day keeps it going. Small habit, real momentum.</p></div></li>
+      <h2 id="features-title">Find your line.<br>Keep it close.</h2>
+      <ul class="feat-grid">
+        <li><span class="ico"><svg class="i"><use href="#i-heart"/></svg></span><div><h3>Swipe a feed</h3><p>Full screen, one quote at a time, in the genres you pick.</p></div></li>
+        <li><span class="ico"><svg class="i"><use href="#i-journal"/></svg></span><div><h3>Keep a journal</h3><p>Everything you liked or wrote about, sorted by month.</p></div></li>
+        <li><span class="ico"><svg class="i"><use href="#i-bell"/></svg></span><div><h3>Get reminded</h3><p>A saved quote returns once, daily, or on your schedule.</p></div></li>
+        <li><span class="ico"><svg class="i"><use href="#i-image"/></svg></span><div><h3>Make it yours</h3><p>60+ backgrounds, or a photo from your camera roll.</p></div></li>
+        <li><span class="ico"><svg class="i"><use href="#i-flame"/></svg></span><div><h3>Keep your streak</h3><p>A like or a reflection a day keeps it going.</p></div></li>
+        <li><span class="ico"><svg class="i"><use href="#i-share"/></svg></span><div><h3>Share it</h3><p>Send any quote as an image made for stories.</p></div></li>
       </ul>
+    </div>
+    <div class="pair">
+      <div class="phone" role="img" aria-label="A liked Motivation quote over misty pines, Keep your eyes on the stars, and your feet on the ground, by Theodore Roosevelt, with a 5 day streak.">
+        <div class="screen">
+          <img src="assets/bg/misty-pines.jpg" alt="" loading="lazy">
+          <span class="cat">Motivation</span>
+          <span class="toast"><svg class="i"><use href="#i-flame"/></svg>5 day streak · Still going</span>
+          <div class="body"><p class="q">Keep your eyes on the stars, and your feet on the ground.</p><p class="by">Theodore Roosevelt</p></div>
+          <div class="rail"><span class="liked"><svg class="i"><use href="#i-heart"/></svg></span><span><svg class="i"><use href="#i-pen"/></svg></span><span><svg class="i"><use href="#i-share"/></svg></span></div>
+          <div class="nav"><span class="on"><svg class="i"><use href="#i-home"/></svg></span><span><svg class="i"><use href="#i-journal"/></svg></span><span><svg class="i"><use href="#i-bell"/></svg></span><span><svg class="i"><use href="#i-sliders"/></svg></span></div>
+        </div>
+      </div>
+      <div class="phone" role="img" aria-label="A Gen Z quote over a lake at night: Be the green flag you want to see.">
+        <div class="screen">
+          <img src="assets/bg/night-lake.jpg" alt="" loading="lazy">
+          <span class="cat">Gen Z</span>
+          <div class="body"><p class="q">Be the green flag you want to see.</p></div>
+          <div class="rail"><span><svg class="i"><use href="#i-heart"/></svg></span><span><svg class="i"><use href="#i-pen"/></svg></span><span><svg class="i"><use href="#i-share"/></svg></span></div>
+          <div class="nav"><span class="on"><svg class="i"><use href="#i-home"/></svg></span><span><svg class="i"><use href="#i-journal"/></svg></span><span><svg class="i"><use href="#i-bell"/></svg></span><span><svg class="i"><use href="#i-sliders"/></svg></span></div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
 
 <section class="ink" aria-labelledby="ink-title">
   <div class="bar">
-    <p class="eyebrow">Backgrounds</p>
     <h2 class="display" id="ink-title">Your feed, your mood.</h2>
-    <p>Sixty photos across night skies, coastlines, cities and more, six plain
-    colours, or a photo of your own.</p>
+    <p>60+ backgrounds across night skies, coastlines, cities and more. Or
+    upload your own.</p>
     <div class="strip">
       <div class="strip-row">
         <div class="phone" role="img" aria-label="A Gratitude quote over a golden field at sunset: Even ordinary days have a few golden minutes. Find them.">
@@ -175,18 +159,18 @@
             <div class="nav"><span class="on"><svg class="i"><use href="#i-home"/></svg></span><span><svg class="i"><use href="#i-journal"/></svg></span><span><svg class="i"><use href="#i-bell"/></svg></span><span><svg class="i"><use href="#i-sliders"/></svg></span></div>
           </div>
         </div>
-        <div class="phone" role="img" aria-label="A Gym quote over amber smoke: Track your lifts. Future you loves watching the numbers climb.">
+        <div class="phone" role="img" aria-label="A Gym quote over a quiet library: Track your lifts. Future you loves watching the numbers climb.">
           <div class="screen">
-            <img src="assets/bg/amber-smoke.jpg" alt="" loading="lazy">
+            <img src="assets/bg/quiet-study.jpg" alt="" loading="lazy">
             <span class="cat">Gym</span>
             <div class="body"><p class="q">Track your lifts. Future you loves watching the numbers climb.</p></div>
             <div class="rail"><span><svg class="i"><use href="#i-heart"/></svg></span><span><svg class="i"><use href="#i-pen"/></svg></span><span><svg class="i"><use href="#i-share"/></svg></span></div>
             <div class="nav"><span class="on"><svg class="i"><use href="#i-home"/></svg></span><span><svg class="i"><use href="#i-journal"/></svg></span><span><svg class="i"><use href="#i-bell"/></svg></span><span><svg class="i"><use href="#i-sliders"/></svg></span></div>
           </div>
         </div>
-        <div class="phone" role="img" aria-label="A liked Love quote over a pink cloud: Love many things, for therein lies the true strength, by Vincent van Gogh.">
+        <div class="phone" role="img" aria-label="A liked Love quote over a forest path: Love many things, for therein lies the true strength, by Vincent van Gogh.">
           <div class="screen">
-            <img src="assets/bg/pink-wisp.jpg" alt="" loading="lazy">
+            <img src="assets/bg/forest-path.jpg" alt="" loading="lazy">
             <span class="cat">Love</span>
             <div class="body"><p class="q">Love many things, for therein lies the true strength.</p><p class="by">Vincent van Gogh</p></div>
             <div class="rail"><span class="liked"><svg class="i"><use href="#i-heart"/></svg></span><span><svg class="i"><use href="#i-pen"/></svg></span><span><svg class="i"><use href="#i-share"/></svg></span></div>
@@ -202,9 +186,9 @@
             <div class="nav"><span class="on"><svg class="i"><use href="#i-home"/></svg></span><span><svg class="i"><use href="#i-journal"/></svg></span><span><svg class="i"><use href="#i-bell"/></svg></span><span><svg class="i"><use href="#i-sliders"/></svg></span></div>
           </div>
         </div>
-        <div class="phone" role="img" aria-label="A Pets quote over mountains at dusk: Cats sit on whatever you're working on because they're your manager.">
+        <div class="phone" role="img" aria-label="A Pets quote over a violet dusk sky: Cats sit on whatever you're working on because they're your manager.">
           <div class="screen">
-            <img src="assets/bg/alpenglow.jpg" alt="" loading="lazy">
+            <img src="assets/bg/violet-dusk.jpg" alt="" loading="lazy">
             <span class="cat">Pets</span>
             <div class="body"><p class="q">Cats sit on whatever you're working on because they're your manager.</p></div>
             <div class="rail"><span><svg class="i"><use href="#i-heart"/></svg></span><span><svg class="i"><use href="#i-pen"/></svg></span><span><svg class="i"><use href="#i-share"/></svg></span></div>

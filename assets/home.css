@@ -319,7 +319,7 @@
 .hero h1 em { color: var(--gold); }
 
 .hero .lede {
-  max-width: 500px;
+  max-width: 545px;
   margin: 28px 0 0;
   font-size: 20px;
   line-height: 1.6;

@@ -3,28 +3,39 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600&family=Newsreader:opsz,wght@6..72,400;6..72,600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600&family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/style.css">
 <title>Support &middot; MindSparkd</title>
 <meta name="description" content="Help with MindSparkd, and how to get in touch.">
 </head>
 <body>
-<div class="wrap">
-<header class="site">
-  <a class="brand" href="index.html">
-    <svg class="mark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3c1 3.5 5 5.5 5 10a5 5 0 0 1-10 0c0-2.5 1.5-4 2.5-5 0 2 1 3 2 3 0-3-1-5.5.5-8z"/></svg>
-    <span class="name">MindSparkd</span>
-  </a>
+<header class="site-header">
+  <div class="bar">
+    <a class="brand" href="index.html">
+      <img src="assets/icon.png" alt="" width="40" height="40">
+      <span>MindSparkd</span>
+    </a>
+    <nav class="site-nav" aria-label="Main">
+      <a href="index.html#features">Features</a>
+      <a href="index.html#genres">Genres</a>
+      <a href="support.html">Support</a>
+      <a class="pill" href="index.html#download">Get the app</a>
+    </nav>
+  </div>
 </header>
+
+<main class="wrap">
 <h1>Support</h1>
 <p class="lede">MindSparkd is made by one person. Email gets a reply — usually
 within a couple of days.</p>
 
 <div class="card">
   <h2>Get in touch</h2>
-  <p><a href="mailto:mindsparkd.app@gmail.com">mindsparkd.app@gmail.com</a></p>
+  <p><a href="mailto:hello@mindsparkd.com">hello@mindsparkd.com</a></p>
   <p>It helps to include your device and iOS version, and what you were doing
   when something went wrong.</p>
 </div>
@@ -57,16 +68,18 @@ data</a> for exactly what that removes.</p>
 <p>Purchases and refunds are handled by Apple, not by MindSparkd. Use
 <a href="https://reportaproblem.apple.com">reportaproblem.apple.com</a> to
 request a refund.</p>
-<footer class="site">
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="privacy.html">Privacy</a>
-    <a href="terms.html">Terms</a>
-    <a href="support.html">Support</a>
-    <a href="delete-data.html">Delete your data</a>
-  </nav>
-  <p>MindSparkd is made by Raphael Guarin. Contact: <a href="mailto:mindsparkd.app@gmail.com">mindsparkd.app@gmail.com</a></p>
+</main>
+
+<footer class="site-footer">
+  <div class="bar">
+    <p>MindSparkd is made by Raphael Guarin · <a href="mailto:hello@mindsparkd.com">hello@mindsparkd.com</a></p>
+    <nav aria-label="Legal">
+      <a href="privacy.html">Privacy</a>
+      <a href="terms.html">Terms</a>
+      <a href="support.html">Support</a>
+      <a href="delete-data.html">Delete your data</a>
+    </nav>
+  </div>
 </footer>
-</div>
 </body>
 </html>

@@ -67,8 +67,9 @@ Claims that depend on code or services elsewhere:
 - **"Deleting your account deletes your uploaded photos."** True as long as
   `delete_auth_user` in the API sweeps the `backgrounds` and `avatars` storage
   buckets. Database rows cascade on their own; storage objects do not.
-- **"29 genres", "60+ backgrounds", "thousands of quotes"** (landing page). Update
-  them when the library or the background catalogue changes.
+- **"25+ genres", "60+ backgrounds", "thousands of quotes"** (landing page).
+  Rounded on purpose so a new genre needs no edit; change them only if the
+  library or the background catalogue shrinks below them.
 - **"Coming soon to the App Store".** When the app is live, make the badge a
   link to `https://apps.apple.com/app/id6801309940` (there is a comment on it).
 - **hello@mindsparkd.com** is the contact on every page. It works because

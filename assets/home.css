@@ -106,6 +106,7 @@
   overflow: hidden;
   background: #17120E;
   color: var(--cream);
+  text-align: left;
 }
 
 .screen > img {
@@ -125,47 +126,68 @@
   background: rgba(12, 9, 6, 0.3);
 }
 
-.screen .cat {
+/* The app's Home, measured off build 21: header, labelled rail, the hint
+ * and the five-tab pill with Home as a capsule. */
+.screen .top {
   position: absolute;
-  top: 5.8%;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 2;
-  padding: 0.45em 1.25em;
-  border-radius: 999px;
-  background: rgba(251, 243, 230, 0.14);
-  border: 1px solid rgba(251, 243, 230, 0.28);
-  font-size: 1.2em;
-  font-weight: 600;
-  letter-spacing: 0.03em;
-  white-space: nowrap;
-}
-
-.screen .toast {
-  position: absolute;
-  top: 12.5%;
-  left: 50%;
-  transform: translateX(-50%);
+  top: 8.2%;
+  left: 4.9%;
+  right: 4.9%;
   z-index: 2;
   display: flex;
   align-items: center;
-  gap: 0.5em;
-  padding: 0.6em 1em;
-  border-radius: 1em;
-  background: rgba(251, 243, 230, 0.92);
-  color: var(--leather);
-  font-size: 1.2em;
+  gap: 0.6em;
+}
+
+.screen .mark {
+  width: 1.25em;
+  height: 1.25em;
+  flex-shrink: 0;
+  background: var(--cream);
+  -webkit-mask: url('art/sparkles.png') center / contain no-repeat;
+  mask: url('art/sparkles.png') center / contain no-repeat;
+}
+
+.screen .top b {
+  font-family: var(--serif);
+  font-size: 1.1em;
   font-weight: 600;
   white-space: nowrap;
 }
 
-.screen .toast .i { width: 1.35em; height: 1.35em; color: #C4763F; stroke-width: 2; }
+.screen .streak {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 0.35em;
+  font-size: 0.68em;
+  font-weight: 600;
+}
+
+.screen .streak .i { width: 1.4em; height: 1.4em; color: #D8A24B; fill: #D8A24B; }
+
+.screen .cat {
+  display: flex;
+  align-items: center;
+  gap: 0.35em;
+  padding: 0.6em 0.75em 0.6em 1.1em;
+  border-radius: 999px;
+  background: rgba(251, 243, 230, 0.08);
+  border: 1px solid rgba(251, 243, 230, 0.32);
+  font-size: 0.62em;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.screen .cat .i { width: 1.3em; height: 1.3em; stroke-width: 2.4; }
 
 .screen .body {
   position: absolute;
   inset: 0;
   z-index: 2;
-  padding: 0 21% 0 9%;
+  padding: 0 25% 0 5.6%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -174,70 +196,114 @@
 .screen .q {
   margin: 0;
   font-family: var(--serif);
-  font-size: 2.1em;
-  line-height: 1.3;
+  font-size: 1.95em;
+  line-height: 1.32;
   font-weight: 500;
   text-shadow: 0 1px 12px rgba(0, 0, 0, 0.45);
 }
 
 .screen .by {
-  margin: 1.25em 0 0;
-  font-size: 1.2em;
-  letter-spacing: 0.08em;
+  margin: 1em 0 0;
+  font-size: 0.78em;
+  letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: rgba(251, 243, 230, 0.78);
+  color: rgba(251, 243, 230, 0.82);
 }
 
 .screen .rail {
   position: absolute;
-  right: 3.8%;
-  bottom: 20.3%;
+  top: 35.7%;
+  right: 5.4%;
   z-index: 2;
   display: flex;
   flex-direction: column;
-  gap: 1.2em;
+  gap: 1.35em;
 }
 
-.screen .rail span {
-  width: 3.7em;
-  height: 3.7em;
+.screen .rail span { display: flex; flex-direction: column; align-items: center; gap: 0.45em; }
+
+.screen .rail i {
+  width: 3.3em;
+  height: 3.3em;
   border-radius: 999px;
-  background: rgba(20, 16, 12, 0.35);
+  background: rgba(20, 16, 12, 0.3);
+  border: 1px solid rgba(251, 243, 230, 0.2);
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.screen .rail .i { width: 1.95em; height: 1.95em; }
-.screen .rail .liked .i { color: #C4763F; fill: #C4763F; }
+.screen .rail .i { width: 1.4em; height: 1.4em; }
+.screen .rail .liked i { border: 1.5px solid #D8A24B; }
+.screen .rail .liked .i { color: #D8A24B; fill: #D8A24B; }
+
+.screen .rail small {
+  font-size: 0.66em;
+  font-weight: 500;
+  color: rgba(251, 243, 230, 0.9);
+  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.45);
+}
+
+.screen .swipe {
+  position: absolute;
+  bottom: 13.2%;
+  left: 0;
+  right: 0;
+  z-index: 2;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6em;
+  font-size: 0.64em;
+  font-weight: 600;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: rgba(251, 243, 230, 0.85);
+}
+
+.screen .swipe .i { width: 1.5em; height: 1.5em; stroke-width: 2.2; }
 
 .screen .nav {
   position: absolute;
-  bottom: 3.2%;
+  bottom: 5.2%;
   left: 50%;
   transform: translateX(-50%);
   z-index: 2;
   display: flex;
-  gap: 0.5em;
-  padding: 0.6em;
+  align-items: center;
+  gap: 0.15em;
+  padding: 0.42em;
   border-radius: 999px;
-  background: rgba(14, 12, 10, 0.72);
+  background: rgba(30, 20, 13, 0.92);
+  border: 1px solid rgba(251, 243, 230, 0.1);
 }
 
 .screen .nav span {
-  width: 3.5em;
-  height: 3.5em;
+  width: 3.25em;
+  height: 2.85em;
   border-radius: 999px;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: rgba(251, 243, 230, 0.6);
+  color: rgba(251, 243, 230, 0.88);
 }
 
-.screen .nav span.on { background: rgba(251, 243, 230, 0.16); color: var(--cream); }
+.screen .nav .i { width: 1.3em; height: 1.3em; }
+
+.screen .nav span.on {
+  width: auto;
+  padding: 0 1.5em 0 1.2em;
+  gap: 0.55em;
+  background: #95522A;
+  color: var(--cream);
+}
+
+.screen .nav span.on .i { fill: currentColor; }
+.screen .nav span.on b { font-size: 0.8em; font-weight: 600; }
+
 /* Write, the gold pen in the middle of the app's pill. */
 .screen .nav span.write { color: var(--gold); }
-.screen .nav .i { width: 1.8em; height: 1.8em; }
 
 /* Hero: the night sky ---------------------------------------------- *
  *

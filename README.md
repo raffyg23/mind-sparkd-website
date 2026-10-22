@@ -38,6 +38,12 @@ To see a change before pushing, open the file in a browser.
 If you change the header or footer, change it in all six pages. That is the
 trade for having no build step, and these pages change rarely.
 
+**After changing a stylesheet, bump its `?v=` date in every page that links
+it** (`style.css` in all six, `home.css` in `index.html`). Cloudflare tells
+browsers to keep CSS for four hours, so without a new `?v=` a phone that
+visited earlier pairs the new HTML with the old stylesheet and the page comes
+out broken (2026-10-21, the night the phone mockups were redrawn).
+
 ## Publishing
 
 **Cloudflare Pages** serves the site at `https://mindsparkd.com`, deploying

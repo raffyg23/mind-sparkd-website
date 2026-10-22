@@ -309,6 +309,9 @@
   letter-spacing: 0.04em;
 }
 
+/* Four items: a touch smaller on the narrowest phones, so the pill stays one line. */
+@media (max-width: 380px) { .badge { font-size: 12px; letter-spacing: 0.02em; } }
+
 .hero h1 {
   margin: 26px 0 0;
   font-family: var(--serif);
